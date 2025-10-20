@@ -1,0 +1,103 @@
+/*
+   Responsive Design
+*/
+
+@media (max-width: 1024px) {
+    
+    .hero-content h1 {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+/* ---- Start of max-width 992px CSS ---- */
+@media (max-width: 992px) {
+    .sm-padding{ padding: 15px; }
+    .navbar-brand{ padding: 11px 0; }
+    .menu-wrap { margin-right: 45px; }
+    .menu-wrap ul.nav{
+        display: none;
+    }
+    .slicknav_menu {
+        display:block;
+    }
+    .header-btn .signup-btn {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+    .hero-section{
+        height: auto;
+        padding: 120px 0 100px;
+    }
+    .hero-content h1 {
+        margin-bottom: 20px;
+        font-size: 32px;
+        line-height: 42px;
+    }
+    .hero-content p {
+        font-size: 14px;
+        line-height: 26px;
+        margin-bottom: 20px;
+    }
+    .features-item.offset-top{
+        transform: translateY(0);
+    }
+    .cta-content h2{
+        font-size: 24px;
+        line-height: 36px;
+    }
+    .cta-content{
+        text-align: center!important;
+    }
+  
+
+}
+/* ---- End of max-width 992px CSS ---- */
+
+
+/* ---- Start of min-width 480px and max-width 768px CSS ---- */
+@media all and (min-width: 480px) and (max-width: 768px) {
+	
+}
+/* ---- End of min-width 480px and max-width 768px CSS ---- */
+
+
+/* ---- Start of max-width 767px CSS ---- */
+@media all and (max-width: 767px) {
+    body, p{
+        font-size: 13px;
+        line-height: 24px;
+    }
+    h1{ font-size: 30px!important; }
+    h2{ font-size: 20px; }
+    h3{ font-size: 16px; }
+    p br{ display: none; }
+    .padding{ padding: 60px 0; }
+    .xs-padding{ padding: 15px; }
+    .hero-section{ padding: 80px 0 60px; }
+    .hero-content h1{ line-height: 35px; }
+    .slick-prev { left: 5px; }
+    .slick-next { right: 5px; }
+}
+/* ---- End of max-width 767px CSS ---- */
+
+
+/* ---- Start of max-width 520px CSS ---- */
+@media all and (max-width: 520px) {
+    
+    
+}
+/* ---- End of max-width 520px CSS ---- */
+
+
+/* ---- Start of max-width 420px CSS ---- */
+@media all and (max-width: 420px) {
+    
+}
+/* ---- End of max-width 420px CSS ---- */
+
+
+/* ---- Start of max-width 380px CSS ---- */
+@media all and (max-width: 380px) {
+	
+}
+/* ---- End of max-width 380px CSS ---- */
