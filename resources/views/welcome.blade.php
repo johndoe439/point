@@ -387,7 +387,7 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-6 padding-15">
                         <div class="widget-content">
-                            <a class="brand" href="#"><img src="/backend/images/app-logo.png" height="70"
+                            <a class="brand" href="#"><img src="/frontend/img/app-logo.png" height="70"
                                     width="120" alt="150x50" /></a>
                             <p>
                                 Pointwealthtrades empowers investors with secure, simple trading and staking.

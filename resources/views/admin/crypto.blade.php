@@ -43,6 +43,46 @@
                                                 class="ri-delete-bin-6-line text-[16px] text-gray-500 dark:text-dark-text"></i>
                                         </button>
                                     </td>
+                                    <!-- Start Delete Device Modal -->
+                                    <div id="deleteDevice" tabindex="-1"
+                                        class="hidden overflow-y-auto overflow-x-hidden fixed inset-0 z-modal w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                        <div class="p-4 w-full max-w-md max-h-full">
+                                            <div class="relative bg-white dark:bg-dark-card-shade rounded-lg shadow">
+                                                <button type="button" data-modal-hide="deleteDevice"
+                                                    class="absolute top-3 end-2.5 hover:bg-gray-200 dark:hover:bg-dark-icon rounded-lg size-8 flex-center">
+                                                    <i
+                                                        class="ri-close-line text-gray-500 dark:text-dark-text text-xl leading-none"></i>
+                                                </button>
+                                                <div class="p-4 md:p-5 text-center">
+                                                    <img src="/dash/images/icons/delete-record.png" alt="delete"
+                                                        class="block h-12 mx-auto" />
+                                                    <div class="mt-5 text-center">
+                                                        <h5 class="mb-1">Are you sure?</h5>
+                                                        <p class="text-gray-500 dark:text-dark-text">Are you certain you
+                                                            want to log out from this
+                                                            device?</p>
+                                                        <div class="flex justify-center gap-2 mt-6">
+                                                            <button type="reset" data-modal-hide="deleteDevice"
+                                                                class="btn b-light btn-danger-light btn-sm">Cancel</button>
+
+
+
+                                                            <form
+                                                                action="{{ route('cryptoaddress.destroy', $address->id) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" data-modal-hide="deleteDevice"
+                                                                    class="btn b-solid btn-danger-solid btn-sm">Yes,
+                                                                    Delete It!</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Delete Device Modal -->
                                 </tr>
                             @endforeach
                         </tbody>
@@ -103,44 +143,6 @@
         </div>
         <!-- End Add Address Modal -->
 
-        <!-- Start Delete Device Modal -->
-        <div id="deleteDevice" tabindex="-1"
-            class="hidden overflow-y-auto overflow-x-hidden fixed inset-0 z-modal w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-            <div class="p-4 w-full max-w-md max-h-full">
-                <div class="relative bg-white dark:bg-dark-card-shade rounded-lg shadow">
-                    <button type="button" data-modal-hide="deleteDevice"
-                        class="absolute top-3 end-2.5 hover:bg-gray-200 dark:hover:bg-dark-icon rounded-lg size-8 flex-center">
-                        <i class="ri-close-line text-gray-500 dark:text-dark-text text-xl leading-none"></i>
-                    </button>
-                    <div class="p-4 md:p-5 text-center">
-                        <img src="/dash/images/icons/delete-record.png" alt="delete" class="block h-12 mx-auto" />
-                        <div class="mt-5 text-center">
-                            <h5 class="mb-1">Are you sure?</h5>
-                            <p class="text-gray-500 dark:text-dark-text">Are you certain you want to log out from this
-                                device?</p>
-                            <div class="flex justify-center gap-2 mt-6">
-                                <button type="reset" data-modal-hide="deleteDevice"
-                                    class="btn b-light btn-danger-light btn-sm">Cancel</button>
 
-                                {{-- <form action="{{ route('cryptoaddress.destroy', $cryptoaddress->id) }}" method="POST"
-                                    onsubmit="return confirm('Are you sure you want to delete this address?');">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form> --}}
-
-                                <form action="{{ route('cryptoaddress.destroy', $address->id) }}" method="POST">
-                                    @csrf
-                                     @method('DELETE')
-                                    <button type="submit" data-modal-hide="deleteDevice"
-                                        class="btn b-solid btn-danger-solid btn-sm">Yes, Delete It!</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Delete Device Modal -->
     </main>
 </x-app-layout>

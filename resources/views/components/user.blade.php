@@ -5,12 +5,14 @@
         tabindex="-1">
         <div
             class="px-4 h-header flex items-center shrink-0 group-data-[sidebar-size=sm]:px-2 group-data-[sidebar-size=sm]:justify-center">
-            <a href="index-2.html" class="group-data-[sidebar-size=lg]:block hidden">
-                <img src="assets/images/logo/logo-text.svg" alt="logo" class="group-[.dark]:hidden" />
-                <img src="assets/images/logo/logo-text-dark.svg" alt="logo" class="group-[.light]:hidden" />
+            <a href="{{ route('dashboard') }}" class="group-data-[sidebar-size=lg]:block hidden">
+                <img src="/frontend/img/app-logo.png" height="50" width="80" alt="logo"
+                    class="group-[.dark]:hidden" />
+                <img src="/frontend/img/app-logo.png" height="50" width="80" alt="logo"
+                    class="group-[.light]:hidden" />
             </a>
-            <a href="index-2.html" class="group-data-[sidebar-size=lg]:hidden block">
-                <img src="assets/images/logo/logo-icon.svg" alt="logo" />
+            <a href="{{ route('dashboard') }}" class="group-data-[sidebar-size=lg]:hidden block">
+                <img src="/frontend/img/app-logo.png" height="50" width="80" alt="logo" />
             </a>
         </div>
         <div id="app-menu-scrollbar" data-scrollbar
@@ -422,3 +424,22 @@
         </script>
     </div>
 </div>
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = '84046fb2a85047da8aaae20b98259220c3bf5ebf';
+    window.smartsupp || (function(d) {
+        var s, c, o = smartsupp = function() {
+            o._.push(arguments)
+        };
+        o._ = [];
+        s = d.getElementsByTagName('script')[0];
+        c = d.createElement('script');
+        c.type = 'text/javascript';
+        c.charset = 'utf-8';
+        c.async = true;
+        c.src = 'https://www.smartsuppchat.com/loader.js?';
+        s.parentNode.insertBefore(c, s);
+    })(document);
+</script>
+<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>

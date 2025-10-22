@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="robots" content="noindex, follow" />
-    <meta name="description" content="Pointwealthtrades | Best Platform" />
+    <meta name="description" content="Pointwealthtrades | Best Staking Platform" />
     <title>Pointwealthtrades | Best Platform</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -73,12 +73,9 @@
                             </div>
                         </div>
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+
                             <li>
-                                <a href="index-2.html"
-                                    class="flex font-medium px-4 py-2 hover:bg-gray-200 dark:hover:bg-dark-icon dark:hover:text-white">Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="account-setting.html"
+                                <a href="{{ route('profile.edit')}}"
                                     class="flex font-medium px-4 py-2 hover:bg-gray-200 dark:hover:bg-dark-icon dark:hover:text-white">Settings</a>
                             </li>
                         </ul>

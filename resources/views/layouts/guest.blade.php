@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Pointwealthtrades | Best Platform" />
-    
+    <meta name="description" content="Pointwealthtrades | Best Staking Platform" />
 
-    <title>Pointwealthtrades | Best  Platform</title>
 
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+    <title>Pointwealthtrades | Best Platform</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/frontend/img/app-logo.png" />
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="/frontend/css/font-awesome.min.css" />
@@ -43,7 +43,7 @@
     <header id="header" class="header-section">
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="navbar-brand"><img src="/backend/images/app-logo.png" height="50"
+                <a href="#" class="navbar-brand"><img src="/frontend/img/app-logo.png" height="50"
                         width="80" alt="logo" /></a>
                 <div class="d-flex menu-wrap">
                     <div id="navmenu" class="mainmenu">
@@ -248,6 +248,26 @@
     <script src="/frontend/js/vendor/wow.min.js"></script>
     <!-- Main JS -->
     <script src="/frontend/js/main.js"></script>
+    <!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = '84046fb2a85047da8aaae20b98259220c3bf5ebf';
+        window.smartsupp || (function(d) {
+            var s, c, o = smartsupp = function() {
+                o._.push(arguments)
+            };
+            o._ = [];
+            s = d.getElementsByTagName('script')[0];
+            c = d.createElement('script');
+            c.type = 'text/javascript';
+            c.charset = 'utf-8';
+            c.async = true;
+            c.src = 'https://www.smartsuppchat.com/loader.js?';
+            s.parentNode.insertBefore(c, s);
+        })(document);
+    </script>
+    <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+
 </body>
 
 </html>
