@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <form method="POST" action="{{ route('password.store') }}">
         @csrf
 
@@ -37,13 +37,12 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}
 
 
 <!DOCTYPE html>
 <html lang="en" class="group" data-sidebar-size="lg">
 
-<!-- Mirrored from template.codexshaper.com/admin/dashkit/new-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 May 2025 15:25:49 GMT -->
 
 <head>
     <meta charset="utf-8">
@@ -125,12 +124,12 @@
                             </div>
                         </div>
                         <!-- Submit Button -->
-                        <button type="submit" class="btn b-solid btn-primary-solid w-full dk-theme-card-square">Confirm
+                        <button  class="btn b-solid btn-primary-solid w-full dk-theme-card-square">Confirm
                             Password</button>
                     </form>
                     <div class="text-gray-900 dark:text-dark-text font-medium leading-none mt-5">
                         Back to /
-                        <a href="sign-in.html" class="text-primary-500 font-semibold">Sign in</a>
+                        <a href="{{ route ('login')}}" class="text-primary-500 font-semibold">Sign in</a>
                     </div>
                 </div>
             </div>
@@ -145,6 +144,6 @@
     <script src="/dash/js/main.js"></script>
 </body>
 
-<!-- Mirrored from template.codexshaper.com/admin/dashkit/new-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 May 2025 15:25:49 GMT -->
+
 
 </html>

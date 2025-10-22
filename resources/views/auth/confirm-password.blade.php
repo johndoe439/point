@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
         {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
     </div>
@@ -22,13 +22,12 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}
 
 
 <!DOCTYPE html>
 <html lang="en" class="group" data-sidebar-size="lg">
 
-<!-- Mirrored from template.codexshaper.com/admin/dashkit/new-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 May 2025 15:25:49 GMT -->
 
 <head>
     <meta charset="utf-8">
@@ -36,7 +35,7 @@
     <meta name="description" content="Pointwealthtrades | Best Platform" />
     <title>Pointwealthtrades | Best Platform</title>
     <meta name="robots" content="noindex, follow">
-   
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
@@ -111,12 +110,12 @@
                             </div>
                         </div>
                         <!-- Submit Button -->
-                        <button type="submit" class="btn b-solid btn-primary-solid w-full dk-theme-card-square">Confirm
+                        <button  class="btn b-solid btn-primary-solid w-full dk-theme-card-square">Confirm
                             Password</button>
                     </form>
                     <div class="text-gray-900 dark:text-dark-text font-medium leading-none mt-5">
                         Back to /
-                        <a href="sign-in.html" class="text-primary-500 font-semibold">Sign in</a>
+                        <a href="{{ route ('loign')}}" class="text-primary-500 font-semibold">Sign in</a>
                     </div>
                 </div>
             </div>
@@ -130,7 +129,5 @@
     <script src="/dash/js/layout.js"></script>
     <script src="/dash/js/main.js"></script>
 </body>
-
-<!-- Mirrored from template.codexshaper.com/admin/dashkit/new-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 May 2025 15:25:49 GMT -->
 
 </html>

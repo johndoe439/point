@@ -92,7 +92,7 @@
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                         </div>
                         <!-- Submit Button -->
-                        <button type="submit" class="btn b-solid btn-primary-solid w-full dk-theme-card-square">Forgot
+                        <button  class="btn b-solid btn-primary-solid w-full dk-theme-card-square">Forgot
                             Password</button>
                     </form>
                     <div class="text-gray-900 dark:text-dark-text font-medium leading-none mt-5">
@@ -115,6 +115,6 @@
     <script src="/dash/js/main.js"></script>
 </body>
 
-<!-- Mirrored from template.codexshaper.com/admin/dashkit/forgot-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 May 2025 15:25:49 GMT -->
+
 
 </html>
