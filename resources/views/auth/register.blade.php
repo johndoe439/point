@@ -149,7 +149,7 @@
                                     autocomplete="new-password"
                                     class="form-input px-4 py-3.5 rounded-lg @error('password') border-red-500 @enderror pr-10">
                                 <button type="button" onclick="togglePasswordVisibility('password')"
-                                    class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 hover:text-gray-700">
+                                    class="absolute inset-y-0 right-0 top-2 pr-3 flex items-center text-gray-500 hover:text-gray-700">
                                     <i class="ri-eye-off-line"></i>
                                 </button>
                             </div>
@@ -166,7 +166,7 @@
                                     placeholder="Confirm Password" required autocomplete="new-password"
                                     class="form-input px-4 py-3.5 rounded-lg pr-10">
                                 <button type="button" onclick="togglePasswordVisibility('password_confirmation')"
-                                    class="absolute  inset-y-0 right-0  pr-3 flex items-center text-gray-500 hover:text-gray-700">
+                                    class="absolute  inset-y-0 right-0 top-2 pr-3 flex items-center text-gray-500 hover:text-gray-700">
                                     <i class="ri-eye-off-line"></i>
                                 </button>
                             </div>

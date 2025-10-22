@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en" class="group" data-sidebar-size="lg">
 
@@ -61,23 +59,26 @@
                         <div class="mb-2.5">
                             <label for="email" class="form-label">Email</label>
                             <input id="email" placeholder="debra.holt@example.com" type="email" name="email"
-                                 required autofocus autocomplete="username"
-                                class="form-input px-4 py-3.5 rounded-lg">
+                                required autofocus autocomplete="username" class="form-input px-4 py-3.5 rounded-lg">
                         </div>
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
 
                         <div class="mt-5">
                             <label for="password" class="form-label">Password</label>
                             <div class="relative">
-                                <input type="password" id="password" placeholder="Password" required
-                                    class="form-input px-4 py-3.5 rounded-lg">
-                                <label for="toggleInputType"
-                                    class="size-8 rounded-md flex-center hover:bg-gray-200 dark:hover:bg-dark-icon foucs:bg-gray-200 dark:foucs:bg-dark-icon position-center !left-auto -right-2.5">
-                                    <input type="password" name="password" required autocomplete="current-password"
-                                        id="toggleInputType" class="inputTypeToggle peer/it" hidden>
-                                    <i
-                                        class="ri-eye-off-line text-gray-500 dark:text-dark-text peer-checked/it:before:content-['\ecb5']"></i>
-                                </label>
+                                <input type="password" id="password" placeholder="Password" name="password" required
+                                    class="form-input px-4 py-3.5 rounded-lg pr-10">
+                                <button type="button" id="togglePassword"
+                                    class="absolute inset-y-0 right-0 top-2 flex items-center pr-3 text-gray-500 hover:text-gray-700 focus:outline-none">
+                                    <svg id="eyeIcon" class="w-5 h-5" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                        </path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
@@ -93,9 +94,22 @@
                                 class="text-xs leading-none text-primary-500 font-semibold">Forgot password?</a>
                         </div>
                         <!-- Submit Button -->
-                        <button  class="btn b-solid btn-primary-solid w-full dk-theme-card-square">Sign
+                        <button class="btn b-solid btn-primary-solid w-full dk-theme-card-square">Sign
                             In</button>
                     </form>
+
+                    <script>
+                        document.getElementById('togglePassword').addEventListener('click', function() {
+                            const passwordInput = document.getElementById('password');
+                            const eyeIcon = document.getElementById('eyeIcon');
+                            const isPassword = passwordInput.type === 'password';
+
+                            passwordInput.type = isPassword ? 'text' : 'password';
+                            eyeIcon.innerHTML = isPassword ?
+                                `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.542 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"></path>` :
+                                `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>`;
+                        });
+                    </script>
                     <div class="font-spline_sans text-gray-900 dark:text-dark-text leading-none text-center my-4">OR
                     </div>
 
