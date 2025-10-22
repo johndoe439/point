@@ -13,6 +13,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="dash/images/favicon.ico" />
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('/dash/css/output.css') }}" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+
+
+
 
 </head>
 
@@ -75,7 +80,7 @@
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
 
                             <li>
-                                <a href="{{ route('profile.edit')}}"
+                                <a href="#"
                                     class="flex font-medium px-4 py-2 hover:bg-gray-200 dark:hover:bg-dark-icon dark:hover:text-white">Settings</a>
                             </li>
                         </ul>
@@ -106,6 +111,7 @@
     @endif
     {{ $slot }}
 
+
     <script data-cfasync="false" src="/dash/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="{{ asset('dash/js/vendor/jquery.min.js') }}"></script>
     <script src="{{ asset('dash/js/vendor/apexcharts.min.js') }}"></script>
@@ -118,7 +124,122 @@
     <script src="{{ asset('dash/js/layout.js') }}"></script>
     <script src="{{ asset('dash/js/main.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div>
+        <style>
+            .alert-container {
+                position: fixed;
+                top: 20vh;
+                right: 2vw;
+                width: clamp(250px, 80vw, 350px);
+                z-index: 1050;
+                /* Ensure it appears above the sidebar */
+            }
+
+            .alert {
+                padding: 1rem;
+                margin-bottom: 0.5rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+                opacity: 0;
+                transform: translateX(100%);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+                font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            }
+
+            .alert.show {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .alert-success {
+                background-color: #28a745;
+                /* Green for success */
+                color: #fff;
+            }
+
+            .alert-danger {
+                background-color: #dc3545;
+                /* Red for error */
+                color: #fff;
+            }
+
+            /* Small devices (phones, < 600px) */
+            @media (max-width: 600px) {
+                .alert-container {
+                    width: 90vw;
+                    right: 1vw;
+                    top: 15vh;
+                }
+
+                .alert {
+                    padding: 0.8rem;
+                    font-size: 0.85rem;
+                }
+            }
+
+            /* Medium devices (tablets, 600px - 900px) */
+            @media (min-width: 601px) and (max-width: 900px) {
+                .alert-container {
+                    width: 85vw;
+                    right: 1.5vw;
+                    top: 15vh;
+                }
+
+                .alert {
+                    padding: 0.9rem;
+                    font-size: 1rem;
+                }
+            }
+
+            /* Large devices (desktops, > 900px) */
+            @media (min-width: 901px) {
+                .alert-container {
+                    width: 350px;
+                    right: 2vw;
+                }
+
+                .alert {
+                    padding: 1rem;
+                    font-size: 1.1rem;
+                }
+            }
+        </style>
+
+        <div class="alert-container" id="alertContainer">
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="alert alert-danger alert-dismissible fade" role="alert">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+        </div>
+
+        <script>
+            document.querySelectorAll('.alert').forEach(alert => {
+                // Add slide-in effect
+                setTimeout(() => {
+                    alert.classList.add('show');
+                }, 100);
+
+                // Auto-dismiss after 10 seconds
+                setTimeout(() => {
+                    alert.classList.remove('show');
+                    setTimeout(() => {
+                        alert.remove();
+                    }, 300); // Wait for fade-out transition
+                }, 3500); // 10 seconds
+            });
+        </script>
+    </div>
 
 
 </body>

@@ -38,7 +38,7 @@
                         <h3 class="text-xl md:text-[28px] leading-none font-semibold text-heading">
                             Welcome back!
                         </h3>
-                        
+
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                         <div class="mb-2.5">
                             <label for="email" class="form-label">Email</label>
                             <input id="email" placeholder="debra.holt@example.com" type="email" name="email"
-                                :value="old('email')" required autofocus autocomplete="username"
+                                 required autofocus autocomplete="username"
                                 class="form-input px-4 py-3.5 rounded-lg">
                         </div>
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
@@ -93,7 +93,7 @@
                                 class="text-xs leading-none text-primary-500 font-semibold">Forgot password?</a>
                         </div>
                         <!-- Submit Button -->
-                        <button type="submit" class="btn b-solid btn-primary-solid w-full dk-theme-card-square">Sign
+                        <button  class="btn b-solid btn-primary-solid w-full dk-theme-card-square">Sign
                             In</button>
                     </form>
                     <div class="font-spline_sans text-gray-900 dark:text-dark-text leading-none text-center my-4">OR

@@ -11,7 +11,7 @@
                 <img src="/frontend/img/app-logo.png" height="50" width="80" alt="logo"
                     class="group-[.light]:hidden" />
             </a>
-            <a href="index-2.html" class="group-data-[sidebar-size=lg]:hidden block">
+            <a href="{{ route('admin') }}" class="group-data-[sidebar-size=lg]:hidden block">
                 <img src="assets/images/logo/logo-icon.svg" alt="logo" />
             </a>
         </div>

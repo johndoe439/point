@@ -44,8 +44,8 @@
                         <div class="flex lg:flex-row flex-col gap-x-4">
                             <div class="w-full mb-4">
                                 <label for="email-5" class="form-label">Network</label>
-                                <input type="text" name="network" id="email-5" class="form-input" placeholder="trc20"
-                                    autocomplete="off" required>
+                                <input type="text" name="network" id="email-5" class="form-input"
+                                    placeholder="trc20" autocomplete="off" required>
                             </div>
                             <div class="w-full mb-4">
                                 <label for="password-5" class="form-label">Crypto Address</label>
@@ -110,41 +110,22 @@
     <!-- End Main Content -->
 
 
-       @push('scripts')
-        @if (session('success'))
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    Swal.fire({
-                        icon: 'success',
-                        text: "{{ addslashes(session('success')) }}",
-                        timer: 3000,
-                        showConfirmButton: false,
-                        background: '#f0fdf4',
-                        iconColor: '#10B981',
-                        customClass: {
-                            popup: 'rounded-xl'
-                        }
-                    });
-                });
-            </script>
-        @endif
-        @if (session('error'))
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    Swal.fire({
-                        icon: 'error',
-                        text: "{{ addslashes(session('error')) }}",
-                        timer: 3000,
-                        showConfirmButton: false,
-                        background: '#fef2f2',
-                        iconColor: '#EF4444',
-                        customClass: {
-                            popup: 'rounded-xl'
-                        }
-                    });
-                });
-            </script>
-        @endif
-    @endpush
-    
+    <style>
+        .alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050;
+            /* Ensure it appears above the sidebar */
+            min-width: 300px;
+            max-width: 400px;
+            margin: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+   
+
+
+
 </x-app-layout>
