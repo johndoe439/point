@@ -68,7 +68,7 @@
                                     placeholder="34565fvgfvwe34rtev" autocomplete="off" required>
                             </div>
                         </div>
-                        <button type="submit" class="btn b-solid btn-primary-solid px-5 dk-theme-card-square">Withdraw
+                        <button  class="btn b-solid btn-primary-solid px-5 dk-theme-card-square">Withdraw
                             Funds</button>
                     </form>
 
