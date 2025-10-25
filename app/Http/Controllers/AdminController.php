@@ -93,6 +93,25 @@ class AdminController extends Controller
             return back()->with('error', 'Failed to update balance: ' . $e->getMessage());
         }
     }
+    public function updateprofit(Request $request, User $user)
+    {
+        try {
+            // Validate the input
+            $request->validate([
+                'profit' => 'required|numeric|min:0',
+            ]);
+
+            // Update the user's balance
+            $user->profit = $request->input('profit');
+            $user->save();
+
+            return redirect()->route('admin.userDetail', $user->id)
+                ->with('success', 'User Profit updated successfully');
+        } catch (\Exception $e) {
+            Log::error('Error updating user Profit: ' . $e->getMessage());
+            return back()->with('error', 'Failed to update Profit: ' . $e->getMessage());
+        }
+    }
 
 
     public function plan()

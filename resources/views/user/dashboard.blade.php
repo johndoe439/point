@@ -130,6 +130,38 @@
                                 </div>
                             </div>
                         </div>
+                        <div
+                            class="col-span-full sm:col-span-6 p-[10px_16px] dk-border-one rounded-xl h-full dk-theme-card-square">
+                            <div class="flex-center-between">
+                                <h6 class="leading-none text-gray-500 dark:text-white font-semibold">
+                                    Profit
+                                </h6>
+
+                            </div>
+                            <div
+                                class="pt-3 bg-card-pattern dark:bg-card-pattern-dark bg-no-repeat bg-100% flex gap-4 mt-3">
+                                <div class="pb-8 shrink-0">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <div class="card-title">
+                                            $<span class="counter-value" data-value=" {{ number_format($user->profit, 2)  }}">0</span>
+                                        </div>
+                                        <div
+                                            class="flex-center text-primary-500 size-5 rounded-50 border border-primary-500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6"
+                                                viewBox="0 0 6 6" fill="none">
+                                                <path
+                                                    d="M3.38569 1.43565L5.45455 3.44715L6 2.91683L3 0L0 2.91683L0.545456 3.44715L2.6143 1.43565V6H3.38569V1.43565Z"
+                                                    fill="currentColor" />
+                                            </svg>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="grow self-center pb-3">
+                                    <div id="admin-total-revenue-chart"></div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Total Enrollments Progress Card -->
                         <div
                             class="col-span-full sm:col-span-6 p-[10px_16px] dk-border-one rounded-xl h-full dk-theme-card-square">

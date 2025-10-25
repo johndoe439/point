@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
              $table->enum('role', ['user', 'admin'])->default('user');
             $table->decimal('balance', 10, 2)->default(0);
+            $table->decimal('profit', 10, 2)->default(0);
             $table->string('home_address')->nullable();
             $table->string('phone_number')->nullable();
             $table->enum('document_type', ['drivers_license', 'government_id', 'passport'])->nullable();

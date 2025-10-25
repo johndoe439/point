@@ -73,6 +73,31 @@
             <div class="col-span-full sm:col-span-6 xl:col-span-8">
                 <div class="card p-0 overflow-hidden">
                     <div class="px-4 py-5 sm:p-7 bg-gray-200/30 dark:bg-dark-card-two">
+                        <h6 class="card-title">User Profit : <b>${{ $user->profit }}</b></h6>
+                    </div>
+                    <div class="p-3 sm:p-7">
+                        <form action="{{ route('admin.update_profit', $user->id) }}" method="POST">
+                            @csrf
+                            <div class="grid grid-cols-2 gap-x-4 gap-y-5">
+                                <div class="col-span-full xl:col-auto leading-none">
+                                    <label for="firstName" class="form-label">Update profit</label>
+                                    <input  id="firstName" type="number" step="0.01" name="profit" value="{{ $user->profit }}" class="form-input">
+                                </div>
+
+
+                            </div>
+                            <div class="flex gap-3 mt-5">
+                                <button type="submit" class="btn b-solid btn-primary-solid dk-theme-card-square">
+                                    <i class="ri-checkbox-circle-line text-inherit hidden sm:block"></i>
+                                    <span>Update Profit</span>
+                                </button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card p-0 overflow-hidden">
+                    <div class="px-4 py-5 sm:p-7 bg-gray-200/30 dark:bg-dark-card-two">
                         <h6 class="card-title">User Balance : <b>${{ $user->balance }}</b></h6>
                     </div>
                     <div class="p-3 sm:p-7">

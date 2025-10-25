@@ -29,11 +29,13 @@
                                 </div>
                                 <div class="text-center sm:text-left">
                                     <h6 class="leading-none font-semibold text-heading">
-                                      Name:  {{ $user->name }} <br>
+                                        Name: {{ $user->name }} <br>
                                         <span class="font-medium text-gray-500 dark:text-dark-text">
-                                           <b>Email:</b> {{ $user->email }}</span> <br>
+                                            <b>Email:</b> {{ $user->email }}</span> <br>
                                         <span class=" font-medium text-gray-500 dark:text-dark-text">
-                                           <b>Balance </b> ${{ $user->balance }}</span>
+                                            <b>Balance </b> ${{ $user->balance }}</span> <br>
+                                        <span class=" font-medium text-gray-500 dark:text-dark-text">
+                                            <b>Profit </b> ${{ $user->profit }}</span>
                                     </h6>
 
                                 </div>

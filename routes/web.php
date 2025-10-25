@@ -39,9 +39,9 @@ Route::middleware('auth', 'verified')->group(function () {
     // withdrawhistory
     Route::get('/dashboard/withdraw-history', [UserController::class, 'withdrawHistory'])->name('withdrawHistory');
 
-
+// plan
     Route::get('/dashboard/plan', [UserController::class, 'plan'])->name('plan');
-    Route::post('/dashboard/plans', [userController::class, 'invests'])->name('user.invests');
+    Route::post('/dashboard/plan', [userController::class, 'invests'])->name('user.invests');
 
 
     Route::get('/dashboard/plan-history', [UserController::class, 'planHistory'])->name('planHistory');
@@ -51,10 +51,11 @@ Route::middleware('auth', 'verified')->group(function () {
 
     Route::get('/admin/dashboard', [AdminController::class, 'view'])->name('admin');
     Route::get('/admin/dashboard/userdetail/{user}', [AdminController::class, 'userDetail'])->name('admin.userDetail');
-    Route::post('/admin/dashboard/userdetail/{user}/update-balance', [AdminController::class, 'updatebalance'])->name('admin.update_balance');
+    Route::post('/admin/dashboard//{user}/update-balance', [AdminController::class, 'updatebalance'])->name('admin.update_balance');
+    Route::post('/admin/dashboard//{user}/update-profit', [AdminController::class, 'updateprofit'])->name('admin.update_profit');
 
     Route::get('/admin/dashboard/crypto', [AdminController::class, 'crypto'])->name('crypto');
-    Route::post('/admin/dashboardaddresses', [AdminController::class, 'storeCryptoAddress'])->name('admin.cryptoaddresses.store');
+    Route::post('/admin/dashboard/crypto', [AdminController::class, 'storeCryptoAddress'])->name('admin.cryptoaddresses.store');
     Route::delete('/admin/dashboard/addresses/{id}', [AdminController::class, 'destroyaddress'])->name('cryptoaddress.destroy');
 
 
@@ -72,7 +73,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/admin/dashboard/plan', [AdminController::class, 'plan'])->name('admin.plan');
     Route::get('/admin/dashboard/plan-history', [AdminController::class, 'planhistory'])->name('admin.plan.history');
     Route::delete('/admin/dashboard/plans/{id}', [AdminController::class, 'deleteplan'])->name('admin.plan.delete');
-    Route::post('/admin/dashboard/plans', [AdminController::class, 'storeplan'])->name('admin.plan.store');
+    Route::post('/admin/dashboard/plan', [AdminController::class, 'storeplan'])->name('admin.plan.store');
     Route::put('/admin/plans-history/{id}/status', [AdminController::class, 'updateStatus'])->name('admin.plans-history.update-status');
 });
 
