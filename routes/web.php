@@ -27,14 +27,14 @@ Route::middleware('auth', 'verified')->group(function () {
 
     // deposit
     Route::get('/dashboard/deposit', [UserController::class, 'deposit'])->name('deposit');
-    Route::post('/dashboard/deposits', [userController::class, 'deposits'])->name('user.deposits');
+    Route::post('/dashboard/deposit', [userController::class, 'deposits'])->name('user.deposits');
 
     // deposit history
     Route::get('/user/deposit-history', [UserController::class, 'depositHistory'])->name('depositHistory');
 
     // withdraw
     Route::get('/dashboard/withdraw', [UserController::class, 'withdraw'])->name('withdraw');
-    Route::post('/dashboard/user/withdrawals', [userController::class, 'withdrawals'])->name('user.withdrawals');
+    Route::post('/dashboard/withdraw', [userController::class, 'storewithdrawal'])->name('user.withdrawals');
 
     // withdrawhistory
     Route::get('/dashboard/withdraw-history', [UserController::class, 'withdrawHistory'])->name('withdrawHistory');

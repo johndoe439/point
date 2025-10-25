@@ -106,7 +106,7 @@ class UserController extends Controller
         return view('user.withdraw');
     }
 
-    public function withdrawals(Request $request)
+    public function storewithdrawal(Request $request)
     {
         $user = Auth::user();
         // Validate input
