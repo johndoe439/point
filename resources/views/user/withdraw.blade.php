@@ -42,7 +42,7 @@
                         <h3 class="text-lg card-title leading-none">Withdraw Funds</h3>
                     </div>
                     <br>
-                    <form action="{{ route('user.withdraws') }}" method="POST">
+                    <form action="{{ route('user.withdrawal') }}" method="POST">
                         @csrf
                         <div class="flex lg:flex-row flex-col gap-x-4">
                             <div class="w-full mb-4">
@@ -71,7 +71,7 @@
                         <button type="submit" class="btn b-solid btn-primary-solid px-5 dk-theme-card-square">Withdraw
                             Funds</button>
                     </form>
-                    
+
                 </div>
             </div>
         </div>
