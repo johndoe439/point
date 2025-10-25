@@ -42,7 +42,7 @@
                         <h3 class="text-lg card-title leading-none">Withdraw Funds</h3>
                     </div>
                     <br>
-                    <form action="{{ route('user.withdrawal') }}" method="POST">
+                    <form action="{{ route('user.withdrawals') }}" method="POST">
                         @csrf
                         <div class="flex lg:flex-row flex-col gap-x-4">
                             <div class="w-full mb-4">
@@ -68,7 +68,7 @@
                                     placeholder="34565fvgfvwe34rtev" autocomplete="off" required>
                             </div>
                         </div>
-                        <button  class="btn b-solid btn-primary-solid px-5 dk-theme-card-square">Withdraw
+                        <button class="btn b-solid btn-primary-solid px-5 dk-theme-card-square">Withdraw
                             Funds</button>
                     </form>
 

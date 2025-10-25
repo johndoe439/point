@@ -34,7 +34,7 @@ Route::middleware('auth', 'verified')->group(function () {
 
     // withdraw
     Route::get('/dashboard/withdraw', [UserController::class, 'withdraw'])->name('withdraw');
-    Route::post('/dashboard/user/withdrawals', [userController::class, 'withdrawals'])->name('user.withdrawal');
+    Route::post('/dashboard/user/withdrawals', [userController::class, 'withdrawals'])->name('user.withdrawals');
 
     // withdrawhistory
     Route::get('/dashboard/withdraw-history', [UserController::class, 'withdrawHistory'])->name('withdrawHistory');
