@@ -10,7 +10,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="dash/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/frontend/img/app-logo.png" />
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('/dash/css/output.css') }}" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
@@ -61,9 +61,15 @@
                     <button type="button" data-popover-target="dropdownProfile" data-popover-trigger="click"
                         data-popover-placement="bottom-end"
                         class="text-gray-500 dark:text-dark-text flex items-center gap-2 sm:pr-4 relative after:absolute after:right-0 after:font-remix after:content-['\ea4e'] after:text-[18px] after:hidden sm:after:block">
-                        <img src="/dash/images/app/avatar-20.png" alt="user-img"
-                            class="size-7 sm:size-9 rounded-50 dk-theme-card-square" />
-
+                        {{-- <img src="/dash/images/app/avatar-20.png" alt="user-img"
+                            class="size-7 sm:size-9 rounded-50 dk-theme-card-square" /> --}}
+                        @if (Auth::user()->image)
+                            <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="avatar"
+                                class="size-7 sm:size-9 rounded-50 dk-theme-card-square">
+                        @else
+                            <img src="{{ asset('dash/images/app/avatar-20.png') }}" alt="avatar"
+                                class="size-7 sm:size-9 rounded-50 dk-theme-card-square">
+                        @endif
 
                         <span
                             class="font-semibold leading-none text-lg capitalize hidden sm:block">{{ Auth::user()->name }}</span>

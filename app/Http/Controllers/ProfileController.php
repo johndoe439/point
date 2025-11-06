@@ -24,17 +24,41 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
-    {
-        $request->user()->fill($request->validated());
+    // public function update(ProfileUpdateRequest $request): RedirectResponse
+    // {
+    //     $request->user()->fill($request->validated());
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+    //     if ($request->user()->isDirty('email')) {
+    //         $request->user()->email_verified_at = null;
+    //     }
+
+    //     $request->user()->save();
+
+    //     return Redirect::route('profile.edit')->with('status', 'profile-updated');
+    // }
+
+    public function update(Request $request)
+    {
+        $user = $request->user();
+
+        $rules = [
+            'name'  => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255', 'unique:users,email,' . $user->id],
+            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+        ];
+
+        $validated = $request->validate($rules);
+
+        if ($request->hasFile('image')) {
+            if ($user->image) {
+                Storage::delete($user->image);
+            }
+            $validated['image'] = $request->file('image')->store('profile', 'public');
         }
 
-        $request->user()->save();
+        $user->update($validated);
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return back()->with('status', 'profile-updated');
     }
 
     /**
@@ -56,5 +80,32 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function kycStore(Request $request)
+    {
+        $user = $request->user();
+
+        $rules = [
+            'home_address'   => ['nullable', 'string', 'max:255'],
+            'phone_number'   => ['nullable', 'string', 'max:20'],
+            'country'        => ['nullable', 'string', 'max:100'],
+            'document_type'  => ['nullable', 'in:drivers_license,government_id,passport'],
+            'document_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,pdf', 'max:5120'],
+        ];
+
+        $data = $request->validate($rules);
+
+        if ($request->hasFile('document_image')) {
+            if ($user->document_image) {
+                Storage::delete($user->document_image);
+            }
+            $data['document_image'] = $request->file('document_image')
+                ->store('kyc/documents', 'public');
+        }
+
+        $user->update($data);
+
+        return back()->with('status', 'kyc-updated');
     }
 }

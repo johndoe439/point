@@ -52,7 +52,7 @@
     <meta name="robots" content="noindex, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/frontend/img/app-logo.png" />
     <!-- Style CSS -->
     <link rel="stylesheet" href="dash/css/output.css">
 </head>
@@ -124,12 +124,12 @@
                             </div>
                         </div>
                         <!-- Submit Button -->
-                        <button  class="btn b-solid btn-primary-solid w-full dk-theme-card-square">Confirm
+                        <button class="btn b-solid btn-primary-solid w-full dk-theme-card-square">Confirm
                             Password</button>
                     </form>
                     <div class="text-gray-900 dark:text-dark-text font-medium leading-none mt-5">
                         Back to /
-                        <a href="{{ route ('login')}}" class="text-primary-500 font-semibold">Sign in</a>
+                        <a href="{{ route('login') }}" class="text-primary-500 font-semibold">Sign in</a>
                     </div>
                 </div>
             </div>

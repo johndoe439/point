@@ -18,6 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/profile/kyc', [ProfileController::class, 'kycStore'])->name('profile.kyc.store');
 });
 
 
@@ -39,7 +40,7 @@ Route::middleware('auth', 'verified')->group(function () {
     // withdrawhistory
     Route::get('/dashboard/withdraw-history', [UserController::class, 'withdrawHistory'])->name('withdrawHistory');
 
-// plan
+    // plan
     Route::get('/dashboard/plan', [UserController::class, 'plan'])->name('plan');
     Route::post('/dashboard/plan', [userController::class, 'invests'])->name('user.invests');
 
@@ -59,7 +60,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::delete('/admin/dashboard/addresses/{id}', [AdminController::class, 'destroyaddress'])->name('cryptoaddress.destroy');
 
 
-// Deposit
+    // Deposit
     Route::get('/admin/dashboard/deposit', [AdminController::class, 'deposit'])->name('admin.deposit');
     Route::put('/admin/deposit/{id}/status', [AdminController::class, 'updatedeposit'])->name('admin.deposit-status');
     Route::delete('/admin/dashboard/plans/{id}', [AdminController::class, 'deletedeposit'])->name('admin.plan.delete');
@@ -69,12 +70,16 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::put('/admin/withdraw/{id}/status', [AdminController::class, 'updatewithdraw'])->name('admin.withdraw-status');
     Route::delete('/admin/dashboard/withdraw/{id}', [AdminController::class, 'deletewithdraw'])->name('admin.withdraw.delete');
 
-// plan
+    // plan
     Route::get('/admin/dashboard/plan', [AdminController::class, 'plan'])->name('admin.plan');
     Route::get('/admin/dashboard/plan-history', [AdminController::class, 'planhistory'])->name('admin.plan.history');
     Route::delete('/admin/dashboard/plans/{id}', [AdminController::class, 'deleteplan'])->name('admin.plan.delete');
     Route::post('/admin/dashboard/plan', [AdminController::class, 'storeplan'])->name('admin.plan.store');
     Route::put('/admin/plans-history/{id}/status', [AdminController::class, 'updateStatus'])->name('admin.plans-history.update-status');
+
+    // kyc status
+
+    Route::patch('/admin/users/{user}/kyc', [AdminController::class, 'kyc'])->name('admin.update_kyc');
 });
 
 require __DIR__ . '/auth.php';

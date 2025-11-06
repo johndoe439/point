@@ -37,7 +37,7 @@
     <title>Pointwealthtrades | Best Platform</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/frontend/img/app-logo.png" />
     <!-- Style CSS -->
     <link rel="stylesheet" href="/dash/css/output.css">
 </head>
@@ -87,12 +87,12 @@
                         <div class="mb-7">
                             <label for="email" class="form-label">Email</label>
                             <input id="email" placeholder="debra.holt@example.com" autocomplete="off"
-                                class="form-input px-4 py-3.5 rounded-lg"type="email" name="email"
-                                required autofocus />
+                                class="form-input px-4 py-3.5 rounded-lg"type="email" name="email" required
+                                autofocus />
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                         </div>
                         <!-- Submit Button -->
-                        <button  class="btn b-solid btn-primary-solid w-full dk-theme-card-square">Forgot
+                        <button class="btn b-solid btn-primary-solid w-full dk-theme-card-square">Forgot
                             Password</button>
                     </form>
                     <div class="text-gray-900 dark:text-dark-text font-medium leading-none mt-5">

@@ -18,9 +18,24 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
+        // 'name',
+        // 'email',
+        // 'password',
         'name',
         'email',
         'password',
+        'image',               // profile picture
+        'home_address',
+        'phone_number',
+        'country',
+        'document_type',
+        'document_image',
+        'kyc_status'
+
+    ];
+
+    protected $casts = [
+        'document_type' => 'string',
     ];
 
     /**
@@ -47,7 +62,7 @@ class User extends Authenticatable
     }
 
 
-     public function Plans()
+    public function Plans()
     {
         return $this->hasMany(Plan::class, 'created_by');
     }
@@ -71,8 +86,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Address::class, 'user_id');
     }
-
-
-
-
 }

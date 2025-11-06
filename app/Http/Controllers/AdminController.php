@@ -68,7 +68,7 @@ class AdminController extends Controller
     }
     public function withdraw()
     {
-         $withdrawals = Withdrawal::with('user')->get();
+        $withdrawals = Withdrawal::with('user')->get();
         return view('admin.withdraw', compact('withdrawals'));
     }
 
@@ -196,5 +196,12 @@ class AdminController extends Controller
 
 
         return redirect()->back()->with('success', 'Status updated successfully.');
+    }
+
+    public function kyc(Request $request, User $user)
+    {
+        $request->validate(['kyc_status' => 'required|in:pending,verified,rejected']);
+        $user->update(['kyc_status' => $request->kyc_status]);
+        return back()->with('success', 'KYC status updated successfully.');
     }
 }
