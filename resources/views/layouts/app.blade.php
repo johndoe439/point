@@ -86,7 +86,7 @@
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
 
                             <li>
-                                <a href="profit.edit"
+                                <a href='profile.edit"
                                     class="flex font-medium px-4 py-2 hover:bg-gray-200 dark:hover:bg-dark-icon dark:hover:text-white">Settings</a>
                             </li>
                         </ul>
