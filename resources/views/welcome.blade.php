@@ -150,7 +150,7 @@
                         <div class="pricing-box">
                             <div class="pricing-head">
                                 <h3>Beginner</h3>
-                                <h2>$0 <span>Free</span></h2>
+                                <h2>$0 to $500 <span>Free</span></h2>
                             </div>
                             <ul class="pricing-list">
                                 <li>Essential Trading</li>
@@ -167,7 +167,7 @@
                         <div class="pricing-box mid-pricing">
                             <div class="pricing-head">
                                 <h3>Advanced</h3>
-                                <h2>$49 <span>Monthly</span></h2>
+                                <h2>$49 to $2000 <span>Monthly</span></h2>
                             </div>
                             <ul class="pricing-list">
                                 <li>Professional Trading</li>
@@ -184,7 +184,7 @@
                         <div class="pricing-box">
                             <div class="pricing-head">
                                 <h3>Premium</h3>
-                                <h2>$99 <span>Monthly</span></h2>
+                                <h2>$99 to 5000 <span>Monthly</span></h2>
                             </div>
                             <ul class="pricing-list">
                                 <li>Elite Trading Tools</li>
